@@ -3,25 +3,20 @@ package main
 import (
 	"fmt"
 
+	"example.com/greetings"
 	"rsc.io/quote"
 )
 
 func main() {
-	arr := []string{"a", "b", "c"}
-	fmt.Println(quote.Glass())
-	for index, value := range arr {
-		fmt.Println(index, " ", value)
-	}
-	for i := 0; i < 6; i++ {
-		fmt.Println(i)
-		if 0 == (i % 2) {
-			//fmt.Println("even")
-		} else if 0 != (i % 2) {
-			//fmt.Println("odd")
-		}
-	}
+	fmt.Println(quote.Glass()) //rsc.io/quote
+	// Get a greeting message and print it.
+	message := greetings.Hello("Thud")
+	fmt.Println(message)
+
 	//array
 	disArray()
+	//Loop
+	disForLoop()
 
 	//Map
 }
@@ -42,4 +37,18 @@ func disArray() {
 
 	strarr[0], strarr[1], strarr[2] = "first", "second", "third"
 	fmt.Println(strarr) //[first second third]
+}
+func disForLoop() {
+	arr := []string{"a", "b", "c"}
+	for index, value := range arr {
+		fmt.Println(index, " ", value)
+	}
+	for i := 0; i < 6; i++ {
+		fmt.Println(i)
+		if 0 == (i % 2) {
+			//fmt.Println("even")
+		} else if 0 != (i % 2) {
+			//fmt.Println("odd")
+		}
+	}
 }
