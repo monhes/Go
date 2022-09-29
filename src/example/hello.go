@@ -2,17 +2,19 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"example.com/greetings"
-	"rsc.io/quote"
 )
 
 func main() {
-	fmt.Println(quote.Glass()) //rsc.io/quote
+	//fmt.Println(quote.Glass()) //rsc.io/quote
 	// Get a greeting message and print it.
-	message := greetings.Hello("Thud")
-	fmt.Println(message)
+	//message := greetings.Hello("Thud")
+	//fmt.Println(message)
 
+	//
+	disError()
 	//array
 	disArray()
 	//Loop
@@ -37,8 +39,10 @@ func disArray() {
 
 	strarr[0], strarr[1], strarr[2] = "first", "second", "third"
 	fmt.Println(strarr) //[first second third]
+	//array tutorial
 }
 func disForLoop() {
+
 	arr := []string{"a", "b", "c"}
 	for index, value := range arr {
 		fmt.Println(index, " ", value)
@@ -51,4 +55,25 @@ func disForLoop() {
 			//fmt.Println("odd")
 		}
 	}
+	//loop
+}
+func disError() {
+	// Set properties of the predefined Logger, including
+	// the log entry prefix and a flag to disable printing
+	// the time, source file, and line number.
+	log.SetPrefix("greetings: ")
+	log.SetFlags(0)
+
+	// Request a greeting message.
+	message, err := greetings.Hello("")
+	// If an error was returned, print it to the console and
+	// exit the program.
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// If no error was returned, print the returned message
+	// to the console.
+	fmt.Println(message)
+	//error handler tutorial
 }
