@@ -13,12 +13,14 @@ func main() {
 	//message := greetings.Hello("Thud")
 	//fmt.Println(message)
 
+	//multipleinput
+	disHellos()
 	//
-	disError()
+	//disError()
 	//array
-	disArray()
+	//disArray()
 	//Loop
-	disForLoop()
+	//disForLoop()
 
 	//Map
 }
@@ -65,7 +67,7 @@ func disError() {
 	log.SetFlags(0)
 
 	// Request a greeting message.
-	message, err := greetings.Hello("")
+	message, err := greetings.Hello("thud")
 	// If an error was returned, print it to the console and
 	// exit the program.
 	if err != nil {
@@ -76,4 +78,16 @@ func disError() {
 	// to the console.
 	fmt.Println(message)
 	//error handler tutorial
+}
+func disHellos() {
+	log.SetPrefix("greetings: ")
+	log.SetFlags(0)
+	//slice of names
+	names := []string{"Glarys", "Copper", "Ark"}
+
+	messages, errs := greetings.Hellos(names)
+	if errs != nil {
+		log.Fatal(errs)
+	}
+	fmt.Println(messages)
 }
