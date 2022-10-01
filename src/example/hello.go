@@ -14,13 +14,15 @@ func main() {
 	//fmt.Println(message)
 
 	//multipleinput
-	disHellos()
+	//disHellos()
 	//
 	//disError()
 	//array
 	//disArray()
 	//Loop
 	//disForLoop()
+	//userInput
+	userInputScan()
 
 	//Map
 }
@@ -90,4 +92,11 @@ func disHellos() {
 		log.Fatal(errs)
 	}
 	fmt.Println(messages)
+}
+
+func userInputScan() string {
+	var input string
+	fmt.Scan(&input)
+	fmt.Println(input, &input)
+	return input
 }
